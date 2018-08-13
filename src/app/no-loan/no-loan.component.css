@@ -1,0 +1,34 @@
+.card-body{
+    width: 300px;
+    font-family: "Roboto", sans-serif;
+    animation-name: card-animation;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.78,.09,.55,1.36);
+    animation-direction: normal;
+}
+@keyframes card-animation{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+.card-header {
+    display:flex;
+    justify-content: center;
+    background-color: rgb(202, 0, 0);
+    color: white;
+    font-weight: bold;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+}
+
+.card-text{
+    font-family: "Roboto Condensed"
+}

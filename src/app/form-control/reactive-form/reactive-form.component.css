@@ -1,0 +1,40 @@
+.main-container {
+    overflow: hidden;
+}
+
+.main-form {
+    margin-top: 25px;
+    background-color: #ccc7c7;
+    padding: 15px;
+    border-radius: 25px;
+    color:white;
+    font-weight: bold;
+}
+
+.primary-form {
+    color:white
+}
+
+.verdict-card {
+    margin-top: 75px;
+    width: 300px;
+    animation-name: response-card;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+@keyframes response-card {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+.spacer-div{
+    margin:0;
+    height:75px;
+}
+

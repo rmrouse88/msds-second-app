@@ -1,0 +1,329 @@
+<div class="container main-container">
+  <form action="" class = 'main-form' [formGroup] = 'inputForm'>
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="firstNameId">First Name</label>
+          <input type="text" class = 'form-control'
+                              id = "firstNameId" 
+                              formControlName = "firstName"
+                              placeholder="First Name (required)"
+                              [ngClass] = "{'is-invalid': (inputForm.get('firstName').touched ||
+                                                            inputForm.get('firstName').dirty) && 
+                                                            !inputForm.get('firstName').valid }" />
+          <span class = 'invalid-feedback'>
+            <span *ngIf = "inputForm.get('firstName').errors?.required">
+              First name is invalid.  Please enter your first name.
+            </span>
+            <span *ngIf = "inputForm.get('firstName').errors?.minlength">
+              First name must contain more than 3 characters!
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+            <label for="lastNameId">Last Name</label>
+            <input type="text" 
+                    class = 'form-control'
+                    id = "lastNameId"
+                    formControlName = "lastName"
+                    placeholder="Last name (required)"
+                    [ngClass] = "{'is-invalid': (inputForm.get('lastName').touched || 
+                                                  inputForm.get('lastName').dirty) && 
+                                                  !inputForm.get('lastName').valid}"/>
+            <span class = 'invalid-feedback'>
+              <span *ngIf = "inputForm.get('lastName').errors?.required">
+                Last Name is required.  Please enter your first name.
+              </span>
+            </span>
+          
+          </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="DAYS_START_JOB">Days Employed</label>
+      <input type="text" 
+              id = "DAYS_START_JOB_id"
+              class = 'form-control'
+              formControlName = "DAYS_START_JOB"
+              placeholder="Days Employed (required)"
+              [ngClass] = "{'is-invalid': (inputForm.get('DAYS_START_JOB').touched ||
+                                           inputForm.get('DAYS_START_JOB').dirty) &&
+                                           !inputForm.get('DAYS_START_JOB').valid}" />
+      <span class = 'invalid-feedback'>
+        <span *ngIf = "inputForm.get('DAYS_START_JOB').errors?.required">
+          Start date with current employer is required.
+        </span>
+      </span>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label class="label" for = "skId">SSN</label>
+          <input class="form-control"
+                 type = "text"
+                 id = "skId"
+                 formControlName = "ID"
+                 [ngClass] = "{'is-invalid': (inputForm.get('ID').touched ||
+                                              inputForm.get('ID').dirty) &&
+                                              !inputForm.get('ID').valid}"/>
+          <span class = "invalid-feedback">
+            <span *ngIf = "inputForm.get('ID').errors?.required">
+                  Social Security Number is required!
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label class="label" for = "incomeId">Income</label>
+            <input class="form-control"
+                   type = "text"
+                   id = "incomeId"
+                   formControlName = "INCOME"
+                   [ngClass] = "{'is-invalid': (inputForm.get('INCOME').touched ||
+                                                inputForm.get('INCOME').dirty) &&
+                                                !inputForm.get('INCOME').valid}"/>
+            <span class = "invalid-feedback">
+              <span *ngIf = "inputForm.get('INCOME').errors?.required">
+                    Income is required!
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+              <label class="label" for = "incomeId">Income Type</label>
+              <select class="form-control"
+                      id = "incomeTypeId"
+                      formControlName = "INCOME_TYPE"
+                      [ngClass] = "{'is-invalid': (inputForm.get('INCOME_TYPE').touched ||
+                                                  inputForm.get('INCOME_TYPE').dirty) &&
+                                                  !inputForm.get('INCOME_TYPE').valid}">
+                <option value="Businessman">Businessman</option>
+                <option value="Commercial associate">Commercial Associate</option>
+                <option value="Maternity leave">Maternity Leave</option>
+                <option value="Pensioner">Pensioner</option>
+                <option value="State servant">State Servant</option>
+                <option value="Student">Student</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Working">Working</option>
+              </select>
+              <span class = "invalid-feedback">
+                <span *ngIf = "inputForm.get('INCOME_TYPE').errors?.required">
+                      Income is required!
+                </span>
+              </span>
+            </div>
+          </div>
+        <div class="col">
+            <div class="form-group">
+              <label class="label" for = "creditId">Credit Requested</label>
+              <input class="form-control"
+                     type = "text"
+                     id = "creditId"
+                     formControlName = "CREDIT"
+                     [ngClass] = "{'is-invalid': (inputForm.get('CREDIT').touched ||
+                                                  inputForm.get('CREDIT').dirty) &&
+                                                  !inputForm.get('CREDIT').valid}"/>
+              <span class = "invalid-feedback">
+                <span *ngIf = "inputForm.get('CREDIT').errors?.required">
+                    Credit is required!
+                </span>
+                <span *ngIf = "inputForm.get('CREDIT').errors?.min">
+                    Credit requested must be greater than 0!
+                </span>
+              </span>
+            </div>
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+              <label for="costGoodsId">Cost of Goods</label>
+              <input type="text" class="form-control"
+                                  id = "costGoodsId"
+                                  formControlName = "COST_GOODS"
+                                  placeholder="Cost of goods for requested loan (required)">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="termId">Requested Loan Term (months)</label>
+            <select class="form-control" 
+                                id = "termId"
+                                formControlName = "TERM_LENGTH"
+                                placeholder = "Term Length (required)">
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+              <option value="48">48</option>
+              <option value="60">60</option>
+              <option value="72">72</option>
+              <option value="84">84</option>
+            </select>
+          </div>
+        </div>        
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+              <label for = "genderId">Gender</label>
+              <select name="" id="genderId" class = 'form-control' formControlName = "GENDER" 
+              [ngClass] = "{'is-invalid': (inputForm.get('GENDER').touched || 
+                                           inputForm.get('GENDER').dirty) && 
+                                           !inputForm.get('GENDER').valid}">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+              <span class = 'invalid-feedback'>
+                <span *ngIf = "inputForm.get('GENDER').errors?.required">
+                  Gender is required!
+
+                </span>
+              </span>
+
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="educationId">Highest education achieved</label>
+            <select name="" id="educationId" class = 'form-control' formControlName = "EDUCATION_LEVEL"
+                    [ngClass] = "{'is-invalid' : (inputForm.get('EDUCATION_LEVEL').touched ||
+                                                  inputForm.get('EDUCATION_LEVEL').dirty) &&
+                                                  !inputForm.get('EDUCATION_LEVEL').valid}">
+              <option value="Academic degree">Academic Degree</option>
+              <option value="Higher education">Higher Education</option>
+              <option value="Incomplete higher">Incomplete Higher</option>
+              <option value="Lower secondary">Lower Secondary</option>
+              <option value="Secondary / secondary special">Secondary / Secondary Special</option>
+            </select>
+            <span class = 'invalid-feedback'>
+              <span *ngIf = "inputForm.get('EDUCATION_LEVEL').errors?.required">
+                Highest education achieved is required!
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="carId" >Do you own a car?</label>
+            <select name="" id="carId" class = "form-control" formControlName = "OWN_CAR"
+                    [ngClass] = "{'is-invalid' : (inputForm.get('OWN_CAR').touched ||
+                                                  inputForm.get('OWN_CAR').dirty) &&
+                                                  !inputForm.get('OWN_CAR').valid}">
+              <option value="Y">Yes</option>
+              <option value="N">No</option>
+            </select>
+            <span class = 'invalid-feedback'>
+                <span *ngIf = "inputForm.get('OWN_CAR').errors?.required">
+                  Car ownership is required!
+                </span>
+            </span>
+          </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+              <label for="homeId" >Do you own a home?</label>
+              <select name="" id="homeId" class = "form-control" formControlName = "OWN_REALTY"
+                      [ngClass] = "{'is-invalid' : (inputForm.get('OWN_REALTY').touched ||
+                                                    inputForm.get('OWN_REALTY').dirty) &&
+                                                    !inputForm.get('OWN_REALTY').valid}">
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+              </select>
+              <span class = 'invalid-feedback'>
+                  <span *ngIf = "inputForm.get('OWN_REALTY').errors?.required">
+                    Home ownership is required!
+                  </span>
+              </span>
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="birthdayId">Birthday</label>
+        <input type="text" 
+                class="form-control" 
+                id = "birthdayId" 
+                formControlName = "DAYS_SINCE_BIRTH"
+                [ngClass] = "{'is-invalid' : (inputForm.get('DAYS_SINCE_BIRTH').touched ||
+                             inputForm.get('DAYS_SINCE_BIRTH').dirty) && 
+                             !inputForm.get('DAYS_SINCE_BIRTH').valid}"/>
+        <span class = "invalid-feedback">
+          <span *ngIf = "inputForm.get('DAYS_SINCE_BIRTH').errors?.required">
+            Birthday is required!
+          </span>
+        </span>        
+      </div>
+      <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="termId">Number of Children</label>
+                <select class="form-control" 
+                                    id = "childrenId"
+                                    formControlName = "NUM_CHILDREN"
+                                    placeholder = "No. of Children (required)">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="termId">Number of Family Members</label>
+                <select class="form-control" 
+                                    id = "childrenId"
+                                    formControlName = "NUM_FAM_MEMBERS"
+                                    placeholder = "No. of Family Members (required)">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="accompaniedId">Accompanying party</label>
+        <select class = "form-control"
+                  id = "accompaniedId"
+                  formControlName = "ACCOMPANIED">
+          <option value="Children">Children</option>
+          <option value="Family">Family</option>
+          <option value="Group of people">Group of people</option>
+          <option value="Spouse, partner">Spouse, partner</option>
+          <option value="Unaccompanied">Unaccompanied</option>
+        </select>
+      </div>
+   <button class = 'btn btn-primary' (click) = "getShit()">Submit</button>
+  </form>
+  <div class = 'spacer-div'></div>
+  <app-prediction-card *ngIf = "response" [response] = "response"></app-prediction-card>
+  <app-no-loan *ngIf = "response" [response] = "response"></app-no-loan>
+</div>
+
+<br> {{ inputForm.value | json }}
+
