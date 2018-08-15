@@ -5,8 +5,6 @@ const proxy = require('http-proxy-middleware')
 const Twitter = require('twitter')
 // const rx = require('rxjs')
 
-require('dotenv').config()
-
 const app = express()
 
 app.listen(3000, () => {
@@ -14,9 +12,6 @@ app.listen(3000, () => {
 })
 
 console.log(process.env.NODE_ENV)
-
-
-app.use("")
 
 
 let options = {
