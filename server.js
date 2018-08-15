@@ -13,6 +13,12 @@ app.listen(3000, () => {
     console.log("App listening on 3000")
 })
 
+console.log(process.env.NODE_ENV)
+
+
+app.use("")
+
+
 let options = {
     target: "http://178.128.146.146:8000",
     changeorigin: true,
