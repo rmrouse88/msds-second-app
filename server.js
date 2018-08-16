@@ -11,9 +11,6 @@ app.listen(3000, () => {
     console.log("App listening on 3000")
 })
 
-console.log(process.env.NODE_ENV)
-
-
 let options = {
     target: "http://178.128.146.146:8000",
     changeorigin: true,
@@ -29,10 +26,11 @@ let myProxy = proxy(options)
 
 app.use('/predict*', myProxy)
 
-let twitter_proxy = {
-    "target": ""
-}
+app.use('/', express.static(path.join(__dirname, './dist')));
 
-// app.use('/twitter'
-// )
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist/index.html'));
+});
+
+
 
