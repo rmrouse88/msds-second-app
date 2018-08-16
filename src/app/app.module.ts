@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RoutingModule } from './routing/routing.module';
 import { FormControlModule } from './form-control/form-control.module';
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormControlModule } from './form-control/form-control.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    FormControlModule
+    FormControlModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
