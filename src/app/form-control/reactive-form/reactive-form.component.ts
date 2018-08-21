@@ -29,6 +29,8 @@ function range(min: number, max: number) : ValidatorFn {
 })
 export class ReactiveFormComponent implements OnInit {
 
+  formToggle:boolean = true;
+
   inputForm:FormGroup;
 
   response:string = '.5757';
@@ -64,31 +66,24 @@ export class ReactiveFormComponent implements OnInit {
   targets : string[] = ["ID", "GENDER", "INCOME", "COST_GOODS", "CREDIT", "TERM_LENGTH", "OWN_CAR", "OWN_REALTY",
                         "EDUCATION_LEVEL", "DAYS_SINCE_BIRTH", "DAYS_START_JOB", "NUM_CHILDREN", "NUM_FAM_MEMBERS",
                         "INCOME_TYPE", "ACCOMPANIED"]
-
-// filterShit(stringArray: string[], targetObject : Object) {
-//   let storage = {}
-//   for (let key in targetObject) {
-//     for (let i = 0; i<stringArray.length; i++) {
-//       if 
-//     }
-//   }
-// }  
   
 getShit() {
-    let storage = {}
-    for (let key in this.inputForm.value) {
-      for (let i = 0; i < this.targets.length; i++) {
-        if (this.targets[i] === key) {
-          storage[key] = this.inputForm.value[key]
-        }
-      }
-    }
-    this.service.getShit(storage).subscribe((data) => {
-      console.log(data)
 
-      this.response = data['default.probability']
+  this.formToggle = !this.formToggle
+    // let storage = {}
+    // for (let key in this.inputForm.value) {
+    //   for (let i = 0; i < this.targets.length; i++) {
+    //     if (this.targets[i] === key) {
+    //       storage[key] = this.inputForm.value[key]
+    //     }
+    //   }
+    // }
+    // this.service.getShit(storage).subscribe((data) => {
+    //   console.log(data)
 
-    })
+    //   this.response = data['default.probability']
+
+    // })
 }
 
 }
