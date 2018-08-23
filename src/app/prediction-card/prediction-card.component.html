@@ -1,7 +1,26 @@
-<div class="card response"> 
-  <h2 class = 'card-header'>{{cardTitle}}</h2>
-  <div class="card-body response">
-    <h3 class="card-title"> {{response}} </h3>
-    <p class = 'card-text'>Congratulations!  Your score qualifies you for a loan with HomeCredit!</p>
+<ng-template [ngIf] = "verdict" [ngIfElse] = "approved">
+  <div class="card">
+    <div class="card-header">
+      Not Approved
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">You were definitely not approved</h5>
+      <p class="card-text"> You were not approved?</p>
+
+    </div>
   </div>
-</div>
+</ng-template>
+
+<ng-template #approved>
+    <div class="card">
+        <div class="card-header">
+          Approved
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">You were definitely approved ! </h5>
+          <p class="card-text"> You were certainly approved!!!!</p>
+    
+        </div>
+      </div>
+
+</ng-template>

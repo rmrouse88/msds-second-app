@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { ReactiveFormComponent } from '../form-control/reactive-form/reactive-form.component';
+import { PredictionCardComponent } from '../prediction-card/prediction-card.component';
 
 const routes:Routes = [
   {path: "", component: WelcomeComponent},
   {path: "reactive-form", component: ReactiveFormComponent},
-  {path: "*", redirectTo: ""}
+  {path: "*", redirectTo: ""},
+  {path: "prediction-component", component: PredictionCardComponent}
 ]
 
 @NgModule({

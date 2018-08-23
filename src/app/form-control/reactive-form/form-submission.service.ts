@@ -12,19 +12,23 @@ export interface customerForm {
   minEmployment:string;
 }
 
-// export interface prediction {
-//   prediction: number;
-// }
-
 @Injectable()
 export class FormSubmissionService {
+
+  modelResponse : string ;
 
   constructor(private http : HttpClient) { }
 
   baseUrl:string = "/predict"
 
   getShit(formValue): Observable<any> {
+
     return this.http.get<any>(this.baseUrl, { params: formValue })
+
+  }
+
+  setResponse(response) : void {
+    this.modelResponse = response;
   }
 }
 

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, FormArray } from '@angular/forms';
+import { Router } from '@angular/router'
 
 import { FormSubmissionService } from './form-submission.service';
 import { element } from '../../../../node_modules/protractor';
+import { Route } from '@angular/compiler/src/core';
 
 function confirmEmails(emailGroup:AbstractControl): {[key:string] : boolean} | null {
   let email = emailGroup.get('email');
@@ -33,11 +35,12 @@ export class ReactiveFormComponent implements OnInit {
 
   inputForm:FormGroup;
 
-  response:string = '.5757';
+  response: boolean;
   cardTitle:string = 'Loan Response'
 
   constructor(private fb: FormBuilder,
-              private service: FormSubmissionService) {}
+              private service: FormSubmissionService,
+              private router: Router) {}
   
   extraneous : string[] = ['firstName', 'lastName']
 
@@ -69,21 +72,27 @@ export class ReactiveFormComponent implements OnInit {
   
 getShit() {
 
-  this.formToggle = !this.formToggle
-    // let storage = {}
-    // for (let key in this.inputForm.value) {
-    //   for (let i = 0; i < this.targets.length; i++) {
-    //     if (this.targets[i] === key) {
-    //       storage[key] = this.inputForm.value[key]
-    //     }
-    //   }
-    // }
-    // this.service.getShit(storage).subscribe((data) => {
-    //   console.log(data)
+  this.formToggle = !this.formToggle // activate a temporary loading screen before observable kicks off a re-route
 
-    //   this.response = data['default.probability']
+  let storage = {}
+  for (let key in this.inputForm.value) {
+    for (let i = 0; i < this.targets.length; i++) {
+      if (this.targets[i] === key) {
+        storage[key] = this.inputForm.value[key]
+      }
+    }
+  }
+  this.service.getShit(storage).subscribe((data) => {
 
-    // })
+    console.log(data)
+
+    this.response = Boolean(data['default.probability'])
+
+    this.service.setResponse(this.response);
+
+    this.router.navigate(['/prediction-component'])
+
+  })
 }
 
 }
