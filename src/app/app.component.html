@@ -1,11 +1,27 @@
-<div class="navbar">
+<div class="nav">
+  <div class="image"></div>
   <div class="navlist">
     <a href="" class="navlink" [routerLink]="['/']">Home</a>
-    <a href="" class="navlink" [routerLink]="['/reactive-form']">Reactive Form</a>
-    <a href="" class="navlink" [routerLink]="['whatups']">Random Bullshit</a>
+    <a href="" class="navlink" [routerLink]="['/reactive-form']">Loan Application</a>
+    </div>
+  <div class="hamburger" (click) = "changeActive()" [ngClass] = "{'active' : active}">
+    <span class = 'ham-span' [ngClass] = "{'active' : active}"></span>
+    <span class = 'ham-span' [ngClass] = "{'active' : active}"></span>
+    <span class = 'ham-span' [ngClass] = "{'active' : active}"></span>
   </div>
 </div>
-
+<div class="second-nav" [ngClass] = "{'active' : active }">
+  <div class="nav-vert" [ngClass] = "{'active' : active }">
+    <a class = 'second-nav-link' href="" [routerLink]="['/']">
+      <h3>Home</h3>
+    </a>
+  </div>
+  <div class="nav-vert" [ngClass] = "{'active' : active }">
+    <a class = 'second-nav-link' href="" [routerLink]="['/reactive-form']">
+        <h3>Loan Application</h3>
+    </a>
+  </div>
+</div>
 
 <div class="master-container">
   <router-outlet></router-outlet>
