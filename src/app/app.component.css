@@ -1,21 +1,125 @@
-.navbar {
-    background-color: orangered;
-    color: white;
+.nav {
+    display: flex;
+    padding: 0 20vw;
+    background: #ccc8c8;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
-    height: 100px;
 }
 
 .navlist {
     display: flex;
     width: 50%;
-    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
 }
 
 .navlink {
     text-decoration: none;
-    color:white
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: bold;
+    color:white;
 }
 
 .master-container { 
     padding-top: 100px;
+}
+
+.image {
+    width: 121px;
+    height: 75px;
+    margin: 0;
+    background-image: url('http://www.homecredit.net/~/media/Images/H/Home-Credit-Group/logo/hcg-logo.png?h=71&la=en&w=121')
+}
+
+.nav .image:hover {
+    cursor: pointer;
+}
+
+.nav .hamburger {
+    display: none;
+    overflow: hidden;
+}
+
+.ham-span {
+    display: block;
+    width: 50px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background: rgba(218, 44, 44, 0.945);
+    transition: all 400ms ease-in-out;
+}
+
+.second-nav {
+    display: none;
+}
+
+.nav-vert {
+    width: 100vw;
+    background: rgb(151, 148, 148);
+    /* margin-left: -100vw; */
+    display: flex;
+    justify-content: center;
+    transition: transform;
+    transition-duration: 1000ms;
+    transition-delay: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .nav .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .ham-span.active:nth-child(1) {
+        transform: translateY(20px) rotate(45deg);
+        
+    }
+    .ham-span.active:nth-child(2) {
+        transform: translateX(200px);
+            
+    }
+    .ham-span.active:nth-child(3) {
+        transform: translateY(-20px) rotate(-45deg);
+        
+    }
+
+    /* . */
+
+    .navlist {
+        display: none;
+    }
+
+    .nav {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .second-nav.active {
+        display: block;
+    }
+
+    /* .active{
+        transition-delay: 250ms;
+        transform: translateX(100vw)
+    } */
+    /* .nav-vert.active:nth-child(2) {
+        transition-delay: 500ms;
+        transform: translateX(100vw)
+    } */
+
+    a.second-nav-link {
+        text-decoration: none;
+        color: white;
+    }
 }
