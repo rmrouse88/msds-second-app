@@ -11,7 +11,7 @@ app.listen(3000, () => {
     console.log("App listening on 3000")
 })
 
-let options = {
+var options = {
     target: "http://178.128.146.146:8000",
     changeorigin: true,
     // onProxyReq(proxyReq, req, res) {
@@ -22,7 +22,7 @@ let options = {
     }
 }
 
-let myProxy = proxy(options)
+var myProxy = proxy(options)
 
 app.use('/predict*', myProxy)
 
