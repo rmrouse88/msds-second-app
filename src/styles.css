@@ -1,3 +1,9 @@
 @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Raleway');
+
+body {
+    font-family: "Raleway", "Roboto", sans-serif;
+}
+
+

@@ -10,7 +10,7 @@ const routes:Routes = [
   {path: "", component: WelcomeComponent},
   {path: "reactive-form", component: ReactiveFormComponent},
   {path: "*", redirectTo: ""},
-  {path: "prediction-component", component: PredictionCardComponent}
+  {path: "prediction-component", component: PredictionCardComponent, pathMatch: 'full'}
 ]
 
 @NgModule({

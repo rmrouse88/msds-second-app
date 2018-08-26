@@ -1,26 +1,52 @@
-<ng-template [ngIf] = "verdict" [ngIfElse] = "approved">
-  <div class="card">
-    <div class="card-header">
-      Not Approved
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">You were definitely not approved</h5>
-      <p class="card-text"> You were not approved?</p>
+<div class="center-div">
 
-    </div>
-  </div>
-</ng-template>
-
-<ng-template #approved>
-    <div class="card">
-        <div class="card-header">
-          Approved
+    <ng-template [ngIf] = "verdict" [ngIfElse] = "approved">        
+      <div class="card custom-card">
+        <div class="card-header reject">
+          <h3> Not Approved! </h3>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">You were definitely approved ! </h5>
-          <p class="card-text"> You were certainly approved!!!!</p>
-    
+        <div class = "card-body">
+          <!-- <h3 class = "card-title"></h3> -->
+          <h4 class = "card-text"> Your application was not approved.</h4>
+          <br> Speak with a customer service representative if you have questions
+          
+          <div class="button-holder">
+            <button class = "btn btn-primary" id = "mainButton">HOME</button>
+          </div>
         </div>
-      </div>
+      </div>  
+              
+      </ng-template>
+      
+      <ng-template #approved>
+        
+              <div class="card custom-card">
+                <div class="card-header">
+                  <h3> Congratulations! </h3>
+                </div>
+                <div class = "card-body">
+                  <h3 class = "card-title"></h3>
+                  <h4 class = "card-text"> You're pre-approved!</h4>
+                  
+                  <br>
+                  <b><p> Here's what to do next: </p></b>
+                  <ol>
+                    <li>Check your e-mail for your pre-approval token. </li>
+                    <br>
+                    <li>Apply the token in HomeCredit's Mobile App. </li>
+                    <br>
+                    <li>Start enjoying the things that make you happy today!</li>
+                  </ol>
+                  <br>
+                  <div class="button-holder">
+                    <a href = "" [routerLink] = "['/']">
+                      <button class = "btn btn-primary" id = "mainButton">HOME</button>
+                    </a>
+                  </div>
+                </div>
+              </div>              
+        
+      </ng-template>
 
-</ng-template>
+</div>
+

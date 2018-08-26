@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
@@ -13,7 +14,8 @@ import { ResponseLoadingComponent } from '../response-loading/response-loading.c
   imports: [
     CommonModule,
     ReactiveFormsModule, 
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   declarations: [ReactiveFormComponent, PredictionCardComponent, NoLoanComponent, ResponseLoadingComponent],
   providers: [FormSubmissionService]

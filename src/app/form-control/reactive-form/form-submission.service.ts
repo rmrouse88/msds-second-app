@@ -19,17 +19,16 @@ export class FormSubmissionService {
 
   constructor(private http : HttpClient) { }
 
-  baseUrl:string = "http://178.128.146.146:8000/predict"
+  baseUrl:string = "/predict"
 
   getShit(formValue): Observable<any> {
-
     return this.http.get<any>(this.baseUrl, { params: formValue })
-
   }
 
   setResponse(response) : void {
     this.modelResponse = response;
   }
+
 }
 
 

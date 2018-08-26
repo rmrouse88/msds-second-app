@@ -1,31 +1,54 @@
-.container-fluid {
-    display: flex;
-    justify-content: center;
-    background: pink;
-    min-height: 5000px;
-}
-/* 
-.sample {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    background: green;
-} */
-
-.main-image{
-    /* height: 1000px; */
-    /* position: absolute; */
+.big-container {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://d2.alternativeto.net/dist/s/360-browser_553850_full.png?format=jpg&width=1600&height=1600&mode=min&upscale=false');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /* background-position: 50% 50%; */
-
 }
 
-.main-title:hover {
-    text-decoration: underline;
+.banner-image{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0,0,0,0) 50%), url('../../assets/HomeCredit_6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.content-header h1 {
+    font-weight: bold;
+    color: white;
+}
+
+.spacer {
+    height: 50px;
+}
+
+.big-title {
+    font-size: 5vmin;
+}
+
+.card-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    margin: 25px 0 0 0 ;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 15px;
+    width: 20rem;
+}
+
+.card-deck {
+    padding: 25px 25px 0 25px;
+}
+
+@media screen and (min-width: 768px ) {
+    h1 {
+        font-size: 3rem;
+    }
 }
 

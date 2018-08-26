@@ -1,41 +1,44 @@
-.card.response{
-    /* margin: 75px;
-     */
+.center-div{
+    position: relative;
+    height: 100vh;
+  }
+  
+  .card-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .custom-card{
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    top: 25%;
     width: 300px;
-    font-family: "Roboto", sans-serif;
-    animation-name: card-animation ;
-    animation-duration: 1000ms;
-    animation-timing-function: cubic-bezier(.78,.09,.55,1.36);
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-}
-@keyframes card-animation { 
-    from {
-        left: -100%;
-    }
-    to {
-        left: 50%;
-    }
-}
-
-.card-header {
+  }
+  
+  .card-header { 
     display:flex;
     justify-content: center;
-    background-color: #27bda4;
-    color: white;
-    font-weight: bold;
-}
+    color:white;
+    background: linear-gradient(to right, #27bda4 70%, white);  
+  }
 
-.card-body.response {
+  .card-header.reject {
+      background: linear-gradient(to right, rgb(254,0,0) 70%, white)
+  }
+  
+  .button-holder {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-}
-
-.card-text.response {
-    display: flex;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: bold;
-}
-
-
+    ;
+  }
+  
+  #mainButton {
+    margin: 0;
+    width: 200px;
+  }
 
